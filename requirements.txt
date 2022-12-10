@@ -1,0 +1,5 @@
+django
+djangorestframework
+django-environ
+django-seed
+psycopg2-binary
