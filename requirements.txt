@@ -1,4 +1,5 @@
 django
+django-allauth==0.51.0
 djangorestframework
 django-environ
 django-seed
