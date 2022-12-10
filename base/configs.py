@@ -5,6 +5,7 @@ environ.Env.read_env()
 
 class GeneralConfig:
     TZ = env('TZ')
+    ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 
 # database configs
@@ -17,6 +18,6 @@ class DatabaseConfig:
 
 
 class GoogleOAuthConfig:
-    CLIENT_ID = env('GOOGLE_OAUTH_CLIENT_ID')
-    SECRET = env('GOOGLE_OAUTH_SECRET')
-    KEY = env('GOOGLE_OAUTH_KEY')
+    GOOGLE_OAUTH_CLIENT_ID = env('GOOGLE_OAUTH_CLIENT_ID')
+    GOOGLE_OAUTH_SECRET = env('GOOGLE_OAUTH_SECRET')
+    GOOGLE_OAUTH_KEY = env('GOOGLE_OAUTH_KEY')

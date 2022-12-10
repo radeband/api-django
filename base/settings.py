@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-nuo+i($w=l)5g@j@o2auea$!)*a%4k8*xu703k+h!*fi+r&kk*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = GeneralConfig.ALLOWED_HOSTS
 
 
 # Application definition
@@ -144,13 +144,12 @@ REST_FRAMEWORK = {
 }
 
 SITE_ID = 1
-
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': GoogleOAuthConfig.CLIENT_ID,
-            'secret': GoogleOAuthConfig.SECRET,
-            'key': GoogleOAuthConfig.KEY,
+            'client_id': GoogleOAuthConfig.GOOGLE_OAUTH_CLIENT_ID,
+            'secret': GoogleOAuthConfig.GOOGLE_OAUTH_SECRET,
+            'key': GoogleOAuthConfig.GOOGLE_OAUTH_KEY,
         }
     }
 }
