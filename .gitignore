@@ -2,3 +2,4 @@ venv/
 base/.env
 api/.env
 *pyc*
+.idea/
