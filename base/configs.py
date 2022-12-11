@@ -4,9 +4,10 @@ environ.Env.read_env()
 
 
 class GeneralConfig:
+    DEBUG = True
     TZ = env('TZ')
     ALLOWED_HOSTS = env('ALLOWED_HOSTS')
-
+    CSRF_TRUSTED_ORIGINS = ['http://api.radeband.ir', 'https://api.radeband.ir']
 
 # database configs
 class DatabaseConfig:

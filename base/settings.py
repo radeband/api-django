@@ -13,10 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nuo+i($w=l)5g@j@o2auea$!)*a%4k8*xu703k+h!*fi+r&kk*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = GeneralConfig.DEBUG
 
 ALLOWED_HOSTS = GeneralConfig.ALLOWED_HOSTS
-
+CSRF_TRUSTED_ORIGINS = GeneralConfig.CSRF_TRUSTED_ORIGINS
 
 # Application definition
 
