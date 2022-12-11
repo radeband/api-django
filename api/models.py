@@ -6,7 +6,7 @@ class Category(models.Model):
         db_table = "categories"
 
     title = models.CharField(max_length=255, unique=True)
-    description = models.TextField(max_length=1024, null=True)
+    description = models.TextField(max_length=1024, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -40,13 +40,13 @@ class Company(models.Model):
     class Meta:
         db_table = "companies"
 
-    id = models.UUIDField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
-    website = models.CharField(max_length=255, null=True)
-    longitude = models.CharField(max_length=255, null=True)
-    latitude = models.CharField(max_length=255, null=True)
-    address = models.CharField(max_length=512, null=True)
-    logo = models.CharField(max_length=255, null=True)
+    website = models.CharField(max_length=255, null=True, blank=True)
+    longitude = models.CharField(max_length=255, null=True, blank=True)
+    latitude = models.CharField(max_length=255, null=True, blank=True)
+    address = models.CharField(max_length=512, null=True, blank=True)
+    logo = models.CharField(max_length=255, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -60,4 +60,4 @@ class CompanyBenefit(models.Model):
     benefit = models.ForeignKey(Benefit, on_delete=models.CASCADE, related_name="benefits")
     # facility_title = models.CharField(max_length=255)
     # facility_type_title = models.CharField(max_length=255)
-    description = models.TextField(max_length=1024, null=True)
+    description = models.TextField(max_length=1024, null=True, blank=True)
