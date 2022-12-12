@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'rest_framework',
+    'rest_framework_swagger',
     'api.apps.ApiConfig',
     'django_seed',
 ]
