@@ -1,24 +1,23 @@
-import environ
-env = environ.Env()
-environ.Env.read_env()
+from decouple import config, Csv
 
 
 class GeneralConfig:
     DEBUG = True
-    TZ = env('TZ')
-    ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+    TZ = config('TZ')
+    # ALLOWED_HOSTS = config('ALLOWED_HOSTS')
+    ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
     CSRF_TRUSTED_ORIGINS = ['http://api.radeband.ir', 'https://api.radeband.ir']
 
 # database configs
 class DatabaseConfig:
-    DB_NAME = env('DB_NAME')
-    DB_USER = env('DB_USER')
-    DB_PASS = env('DB_PASS')
-    DB_HOST = env('DB_HOST')
-    DB_PORT = env('DB_PORT')
+    DB_NAME = config('DB_NAME')
+    DB_USER = config('DB_USER')
+    DB_PASS = config('DB_PASS')
+    DB_HOST = config('DB_HOST')
+    DB_PORT = config('DB_PORT')
 
 
 class GoogleOAuthConfig:
-    GOOGLE_OAUTH_CLIENT_ID = env('GOOGLE_OAUTH_CLIENT_ID')
-    GOOGLE_OAUTH_SECRET = env('GOOGLE_OAUTH_SECRET')
-    GOOGLE_OAUTH_KEY = env('GOOGLE_OAUTH_KEY')
+    GOOGLE_OAUTH_CLIENT_ID = config('GOOGLE_OAUTH_CLIENT_ID')
+    GOOGLE_OAUTH_SECRET = config('GOOGLE_OAUTH_SECRET')
+    GOOGLE_OAUTH_KEY = config('GOOGLE_OAUTH_KEY')
