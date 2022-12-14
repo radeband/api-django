@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'api.apps.ApiConfig',
     'django_seed',
+
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
